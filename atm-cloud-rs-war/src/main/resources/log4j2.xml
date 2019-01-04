@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="trace">
+	<Properties>
+<!-- 		<Property name="hostname">$${env:HOSTNAME}</Property>  -->
+<Property name="hostname">localhost</Property>
+		<Property name="filePathLog">/tmp/atm-cloud-rs</Property>
+	</Properties>
+
+
+	<Appenders>
+		<Console name="STDOUT" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%p] [%l] - %m%n" />
+		</Console>
+
+		<RollingFile name="logFile"
+			fileName="${filePathLog}/${hostname}-atm-cloud-rs.log"
+			filePattern="${filePathLog}/atm-cloud-rs-%d{MM-dd-yyyy}.%i.log.gz">
+			<PatternLayout>
+				<Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%p] [%l] - %m%n</Pattern>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="20 MB"/>
+			</Policies>
+			<DefaultRolloverStrategy>
+				<Delete basePath="${filePathLog}" maxDepth="2">
+					<IfFileName glob="atm-cloud-rs-*.log.gz" />
+					<IfLastModified age="20d" />
+				</Delete>
+			</DefaultRolloverStrategy>
+		</RollingFile>
+		
+		
+	
+		
+	</Appenders>
+
+	<Loggers>
+
+		<Logger name="org.apache.http" level="debug" additivity="false">
+			<AppenderRef ref="logFile" />
+			<AppenderRef ref="STDOUT" />
+		</Logger>
+
+		
+
+		<Logger name="org.springframework.web.filter.CommonsRequestLoggingFilter"
+			level="debug" additivity="false">
+			<AppenderRef ref="logFile" />
+			<AppenderRef ref="STDOUT" />
+		</Logger>
+
+		<Logger name="com.hsbc.mx.atm.rest" level="error"
+			additivity="false">
+			<AppenderRef ref="logFile" />
+			<AppenderRef ref="STDOUT" />
+		</Logger>
+	
+		
+
+		<Root level="info">
+			<AppenderRef ref="logFile" />
+			<AppenderRef ref="STDOUT" />
+		</Root>
+
+	</Loggers>
+
+
+</Configuration>

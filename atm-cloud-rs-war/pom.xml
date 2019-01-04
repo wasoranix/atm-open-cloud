@@ -1,0 +1,445 @@
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.hsbc.hbmx.htsl-m225</groupId>
+	<artifactId>atm-cloud-rs-war</artifactId>
+	<packaging>war</packaging>
+	<version>${artifact.version}</version>
+	<name>atm-cloud-rs-war</name>
+	<url>http://maven.apache.org</url>
+	<description>ATM SERVICES to FIND ATM</description>
+
+	<properties>
+		<start-class>com.hsbc.mx.atm.ApplicationLocal</start-class>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.7</java.version>
+		<log4j2.version>2.8.2</log4j2.version>
+		<jackson.version>2.9.4</jackson.version>
+		<packaging.type>war</packaging.type>
+		<jar.version>1.0.5</jar.version>
+		<cucumber.version>2.3.1</cucumber.version>
+		<spring.fox.swagger>2.8.0</spring.fox.swagger>
+		<!-- <spring.core.version>4.3.20</spring.core.version> -->
+	</properties>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.9.RELEASE</version>
+		<relativePath />
+	</parent>
+	<dependencies>
+
+
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>1.8.9</version>
+		</dependency>
+
+		<!-- Cucumber -->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>${cucumber.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-junit</artifactId>
+			<version>${cucumber.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-spring</artifactId>
+			<version>${cucumber.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+				<exclusion>
+					<artifactId>spring-core</artifactId>
+					<groupId>org.springframework</groupId>
+				</exclusion>
+			</exclusions>
+
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.fasterxml.jackson.core</groupId>
+					<artifactId>jackson-databind</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.hibernate</groupId>
+					<artifactId>hibernate-validator</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.apache.tomcat.embed</groupId>
+					<artifactId>tomcat-embed-el</artifactId>
+				</exclusion>
+				<exclusion>
+					<artifactId>spring-expression</artifactId>
+					<groupId>org.springframework</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>spring-core</artifactId>
+					<groupId>org.springframework</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-actuator</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+				<exclusion>
+					<artifactId>spring-expression</artifactId>
+					<groupId>org.springframework</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>spring-core</artifactId>
+					<groupId>org.springframework</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jdbc</artifactId>
+			<exclusions>
+				<exclusion>
+					<artifactId>spring-core</artifactId>
+					<groupId>org.springframework</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+
+		<!-- log4j 2 -->
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-log4j2</artifactId>
+		</dependency>
+
+
+
+		<!-- -->
+
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.3.2</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>2.9.5</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>${spring.fox.swagger}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>${spring.fox.swagger}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-expression</artifactId>
+			<version>4.3.20.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>4.3.20.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>4.3.20.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>4.3.20.RELEASE</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+		</dependency>
+
+<!-- 		<dependency> -->
+<!-- 			<groupId>mysql</groupId> -->
+<!-- 			<artifactId>mysql-connector-java</artifactId> -->
+<!-- 			<version>8.0.13</version> -->
+<!-- 		</dependency> -->
+		
+<!-- 		<dependency> -->
+<!--   <groupId>websphere</groupId> -->
+<!--   <artifactId>com.ibm.ws.prereq.commonj-twm</artifactId> -->
+<!--   <version>7.0.0</version> -->
+<!-- </dependency> -->
+
+	</dependencies>
+	<build>
+		<finalName>atm-cloud-rs</finalName>
+		<plugins>
+
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<!-- Se descomenta para generar archivo de librerias -->
+					<execution>
+						<id>copy-dependencies</id>
+						<phase>install</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>target/dependency</outputDirectory>
+							<excludeScope>provided</excludeScope>
+							<!-- <excludeTransitive>true</excludeTransitive> -->
+							<excludeArtifactIds>jackson-databind,guava,dmp-dsc-service,FPLibrary</excludeArtifactIds>
+							<!-- <excludeGroupIds>org.yaml,com.fasterxml.jackson.core,org.hamcrest,junit,org.springframework.boot,aopalliance</excludeGroupIds> -->
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.2.2</version>
+				<configuration>
+					<warName>atm-cloud</warName>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.3</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+
+
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>appengine-maven-plugin</artifactId>
+				<version>1.3.2</version>
+				<configuration>
+					<version>1</version>
+				</configuration>
+			</plugin>
+
+		</plugins>
+
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>com.sonatype.clm</groupId>
+					<artifactId>clm-maven-plugin</artifactId>
+					<version>2.5.2-01</version>
+					<configuration>
+						<serverUrl>https://sonatypeiq.systems.uk.hsbc:8443/</serverUrl>
+						<username>${clm.user}</username>
+						<password>${clm.password}</password>
+						<applicationId>dmp-message-donkey-war</applicationId>
+						<stage>release</stage>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+
+	</build>
+
+
+	<profiles>
+		<profile>
+			<id>local</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+
+			<properties>
+				<start-class>com.hsbc.mx.atm.ApplicationLocal</start-class>
+				<artifact.version>${jar.version}-SNAPSHOT</artifact.version>
+			</properties>
+
+			<dependencies>
+
+
+				<dependency>
+					<groupId>org.hibernate</groupId>
+					<artifactId>hibernate-validator</artifactId>
+					<!-- <version>5.2.4.Final</version> -->
+					<version>5.3.6.Final</version>
+					<scope>runtime</scope>
+				</dependency>
+
+				<dependency>
+					<groupId>javax</groupId>
+					<artifactId>javaee-api</artifactId>
+					<version>7.0</version>
+				</dependency>
+
+				<dependency>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-jdbc</artifactId>
+				</dependency>
+
+				<dependency>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-tomcat</artifactId>
+				</dependency>
+
+			</dependencies>
+		</profile>
+
+		<profile>
+			<id>dev</id>
+			<properties>
+								<start-class>com.hsbc.mx.atm.ApplicationLocal</start-class>
+				<artifact.version>${jar.version}-SNAPSHOT</artifact.version>
+			</properties>
+			<dependencies>
+
+				<dependency>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-jdbc</artifactId>
+					<exclusions>
+						<exclusion>
+							<groupId>org.apache.tomcat</groupId>
+							<artifactId>tomcat-jdbc</artifactId>
+						</exclusion>
+					</exclusions>
+				</dependency>
+				<dependency>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-tomcat</artifactId>
+					<scope>provided</scope>
+				</dependency>
+
+				<dependency>
+					<groupId>com.oracle.ojdbc</groupId>
+					<artifactId>ojdbc7</artifactId>
+					<version>12.1.0.2</version>
+					<scope>provided</scope>
+				</dependency>
+
+			</dependencies>
+		</profile>
+
+		<profile>
+			<id>prod</id>
+			<properties>
+								<start-class>com.hsbc.mx.atm.ApplicationLocal</start-class>
+				<artifact.version>${jar.version}</artifact.version>
+			</properties>
+
+			<dependencies>
+
+				<dependency>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-jdbc</artifactId>
+					<exclusions>
+						<exclusion>
+							<groupId>org.apache.tomcat</groupId>
+							<artifactId>tomcat-jdbc</artifactId>
+						</exclusion>
+					</exclusions>
+				</dependency>
+				<dependency>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-tomcat</artifactId>
+					<scope>provided</scope>
+				</dependency>
+
+				<dependency>
+					<groupId>com.oracle.ojdbc</groupId>
+					<artifactId>ojdbc7</artifactId>
+					<version>12.1.0.2</version>
+					<scope>provided</scope>
+				</dependency>
+
+			</dependencies>
+		</profile>
+	</profiles>
+
+	<distributionManagement>
+		<repository>
+			<id>dsnexus</id>
+			<name> </name>
+			<url>https://dsnexus.uk.hibm.hsbc:8081/nexus/service/local/staging/deploy/maven2</url>
+		</repository>
+		<snapshotRepository>
+			<id>dsnexus-snapshots</id>
+			<name> </name>
+			<url>https://dsnexus.uk.hibm.hsbc:8081/nexus/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+</project>

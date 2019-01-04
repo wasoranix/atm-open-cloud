@@ -1,0 +1,156 @@
+{
+  "meta": {
+    "LastUpdated": "2019-01-03T19:20:07.150Z",
+    "TotalResults": 1,
+    "Agreement": "Use of the APIs and any related data will be subject to the terms of the Open Licence and subject to terms and conditions",
+    "License": "https://www.openbanking.org.mx-tbd/open-licence",
+    "TermsOfUse": "https://www.openbanking.org.mx-tbd/terms"
+  },
+  "data": [
+    {
+      "Brand": [
+        {
+          "BrandName": "MÉXICO",
+          "ATM": [
+            {
+              "Identification": "999995502",
+              "SupportedLanguages": [],
+              "SupportedCurrencies": [
+                "MXN"
+              ],
+              "Branch": {
+                "Identification": "N/A"
+              },
+              "Location": {
+                "Site": {
+                  "Name": "C.M. BODEGA ZUMPANGO"
+                },
+                "PostalAddress": {
+                  "AddressLine": [
+                    "COL. BARRIO DE SAN JUAN"
+                  ],
+                  "BuildingNumber": "SIN NUMERO",
+                  "StreetName": "JORGE JIMENEZ CANTU",
+                  "TownName": "ZUMPANGO",
+                  "CountrySubDivision": [
+                    "ESTADO DE MEXICO"
+                  ],
+                  "Country": "MX",
+                  "PostCode": "55600",
+                  "GeoLocation": {
+                    "GeographicCoordinates": {
+                      "Latitude": "19.797267",
+                      "Longitude": "-99.105855"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "Identification": "999991271",
+              "SupportedLanguages": [],
+              "SupportedCurrencies": [
+                "MXN"
+              ],
+              "Branch": {
+                "Identification": "966"
+              },
+              "Location": {
+                "Site": {
+                  "Name": "SUC. ZUMPANGO"
+                },
+                "PostalAddress": {
+                  "AddressLine": [
+                    "BARRIO DE SAN JUAN CENTRO"
+                  ],
+                  "BuildingNumber": "2",
+                  "StreetName": "AV. CUAUHTEM",
+                  "TownName": "ZUMPANGO",
+                  "CountrySubDivision": [
+                    "ESTADO DE MEXICO"
+                  ],
+                  "Country": "MX",
+                  "PostCode": "55600",
+                  "GeoLocation": {
+                    "GeographicCoordinates": {
+                      "Latitude": "19.798024",
+                      "Longitude": "-99.101168"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "Identification": "999991272",
+              "SupportedLanguages": [],
+              "SupportedCurrencies": [
+                "MXN"
+              ],
+              "Branch": {
+                "Identification": "966"
+              },
+              "Location": {
+                "Site": {
+                  "Name": "SUC. ZUMPANGO"
+                },
+                "PostalAddress": {
+                  "AddressLine": [
+                    "BARRIO DE SAN JUAN CENTRO"
+                  ],
+                  "BuildingNumber": "2",
+                  "StreetName": "AV. CUAUHTEM",
+                  "TownName": "ZUMPANGO",
+                  "CountrySubDivision": [
+                    "ESTADO DE MEXICO"
+                  ],
+                  "Country": "MX",
+                  "PostCode": "55600",
+                  "GeoLocation": {
+                    "GeographicCoordinates": {
+                      "Latitude": "19.798024",
+                      "Longitude": "-99.101168"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "Identification": "999991273",
+              "SupportedLanguages": [],
+              "SupportedCurrencies": [
+                "MXN"
+              ],
+              "Branch": {
+                "Identification": "966"
+              },
+              "Location": {
+                "Site": {
+                  "Name": "SUC. ZUMPANGO"
+                },
+                "PostalAddress": {
+                  "AddressLine": [
+                    "BARRIO DE SAN JUAN CENTRO"
+                  ],
+                  "BuildingNumber": "2",
+                  "StreetName": "AV. CUAUHTEM",
+                  "TownName": "ZUMPANGO",
+                  "CountrySubDivision": [
+                    "ESTADO DE MEXICO"
+                  ],
+                  "Country": "MX",
+                  "PostCode": "55600",
+                  "GeoLocation": {
+                    "GeographicCoordinates": {
+                      "Latitude": "19.798024",
+                      "Longitude": "-99.101168"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
