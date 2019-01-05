@@ -27,15 +27,18 @@
 			</key>
 			<value type="java.lang.String">
 				<![CDATA[
-						select otro_ATM cajero_CERCANO from (
-						select  A.id_atm OTRO_ATM,
-						SQRT (power(A.LATITUD - (select LATITUD from ATM_CATALOGUE where id_ATM = :ID_ATM),2) 
-						+ power (A.LONGITUD - (select longitud from ATM_CATALOGUE where id_ATM = :ID_ATM) ,2 )  ) distancia
-						from ATM_CATALOGUE A
-						where  A.id_ATM != :ID_ATM
-						order by distancia asc
-						)
-						where rownum <2
+						select * from ATM_CATALOGUE
+							where id in (
+							select otro_ATM cajero_CERCANO from (
+							select  A.id OTRO_ATM,
+							SQRT (power(A.latitude - (select latitude from ATM_CATALOGUE where id = :ID_ATM),2) 
+							+ power (A.longitude - (select longitude from ATM_CATALOGUE where id = :ID_ATM) ,2 )  ) distancia
+							from ATM_CATALOGUE A
+							where  A.id != :ID_ATM
+							order by distancia asc
+							)
+							where rownum <4
+							)
 				]]>
 			</value>
 		</entry>

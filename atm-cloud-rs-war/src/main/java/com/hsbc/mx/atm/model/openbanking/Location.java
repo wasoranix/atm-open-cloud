@@ -21,4 +21,36 @@ public class Location extends JsonObjectBase {
 
     @JsonProperty("PostalAddress")
     private PostalAddress postalAddress;
+
+    /**
+     * @return the site
+     */
+    public Site getSite() {
+        return this.site;
+    }
+
+    /**
+     * @param site
+     *            the site to set
+     */
+    public void setSite(final Site site) {
+        this.site = site;
+    }
+
+    /**
+     * @return the postalAddress
+     */
+    public PostalAddress getPostalAddress() {
+        return this.postalAddress;
+    }
+
+    /**
+     * @param postalAddress
+     *            the postalAddress to set
+     */
+    public void setPostalAddress(final PostalAddress postalAddress) {
+        this.postalAddress = postalAddress;
+    }
+
+
 }
